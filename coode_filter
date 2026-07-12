@@ -1,0 +1,94 @@
+#!/bin/bash
+
+# پاک کردن صفحه
+clear
+
+# کدهای رنگی
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+# متن ASCII آرت
+ART="${RED}
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⡿⠟⠉⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠉⠻⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⠿⠋⠄⠄⠄⠄⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠄⠄⠄⠄⠙⢿⣿⣿⣿
+⣿⡟⠁⠄⠄⠄⠄⠄⠄⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠁⠄⠄⠄⠄⠄⠄⠙⢿⣿
+⣿⣷⣿⣶⣤⡀⠄⠄⠄⠄⠈⠿⣿⣿⢹⡟⣿⣿⠟⠄⠄⠄⠄⠄⣀⣤⣾⣿⣾⣿
+⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠙⠟⠘⠃⡿⠁⠄⠄⠄⠄⠄⢸⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣷⣀⣀⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⣀⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠄⠄⠄⠄⠄⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠄⠄⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿
+ID RUBIKA:@bardii93
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+${NC}"
+
+# تابع نمایش منو
+show_menu() {
+    echo -e "${ART}"
+    echo -e "${YELLOW}                                    ....error${NC}"
+    echo ""
+    echo -e "${GREEN}   1 Coobe Fil${NC}"
+    echo -e "${RED}   2 Exit${NC}"
+    echo ""
+    echo -e "${CYAN}  BARDIA🕷️🕷️🕷️🕷️🕷️🕷️🕷️: ${NC}"
+}
+
+# لینک‌ها
+LINKS=(
+    "http://v.3.0.2.yftt15k.in"
+    "http://sex.report.offline.online.in"
+    "http://report.com"
+    "http://xXx.co"
+    "http://server.3.5.7.yfttk08.in"
+    "http://yfttk17.in"
+    "https://fa.m.wikipedia.org/wiki/%D8%B3%DB%8C%D8%AF_%D8%B1%D9%88%D8%AD%E2%80%8C%D8%A7%D9%84%D9%84%D9%87_%D8%AE%D9%85%DB%8C%D9%86%DB%8C"
+    "http://ffmodmenu.page.link/Anti-V")
+
+# حلقه اصلی
+while true; do
+    clear
+    show_menu
+    read -r choice
+
+    case $choice in
+        1)
+            clear
+            echo -e "${RED}"
+
+            # ========== ساخت دایرکتوری و فایل ==========
+            DIR_NAME="code_filter"
+            FILE_NAME="links_output.txt"
+
+            # ساخت دایرکتوری اگر وجود نداشت
+            mkdir -p "$DIR_NAME"
+
+            # ذخیره لینک‌ها توی فایل
+            printf "%s\n" "${LINKS[@]}" > "$DIR_NAME/$FILE_NAME"
+
+            echo -e "${GREEN}[✓] فایل لینک‌ها در مسیر $DIR_NAME/$FILE_NAME ذخیره شد.${NC}"
+            echo ""
+            echo -e "${YELLOW}برای مشاهده فایل از دستور زیر استفاده کن:${NC}"
+            echo -e "${CYAN}   cd $DIR_NAME && ls && cat $FILE_NAME${NC}"
+            echo ""
+            echo -e "${NC}"
+            # =========================================
+
+            echo ""
+            echo -e "${YELLOW} Enter -exit...${NC}"
+            read -r
+            ;;
+        2)
+            clear
+            echo -e "${GREEN}   خارج شدید.${NC}"
+            exit 0
+            ;;
+        *)
+            echo -e "${RED}   گزینه نامعتبر! Enter بزنید و دوباره امتحان کنید.${NC}"
+            read -r
+            ;;
+    esac
+done
