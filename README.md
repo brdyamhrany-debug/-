@@ -1,7 +1,7 @@
 ساخت کد فیلتری با ترموکس 🗿🦸
 
 
-git clon https://github.com/brdyamhrany-debug/-
+git clone https://github.com/brdyamhrany-debug/-
 
 ls
 
